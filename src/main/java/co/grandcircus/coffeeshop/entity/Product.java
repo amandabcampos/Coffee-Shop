@@ -1,12 +1,22 @@
-package co.grandcircus.entity;
+package co.grandcircus.coffeeshop.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Products")
 public class Product {
 	
-	private Integer id;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private String description;
 	private Integer quantity;
 	private Double price;
+	private String image;
 	
 	public Product() {}
 
@@ -15,13 +25,22 @@ public class Product {
 		this.description = description;
 		this.quantity = quantity;
 		this.price = price;
+		this.image = null;
+	}
+	
+	public Product(String name, String description, Integer quantity, Double price, String image) {
+		this.name = name;
+		this.description = description;
+		this.quantity = quantity;
+		this.price = price;
+		this.image = image;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -57,18 +76,20 @@ public class Product {
 		this.price = price;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", quantity=" + quantity
-				+ ", price=" + price + "]";
+				+ ", price=" + price + ", image=" + image + "]";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+
 
 }

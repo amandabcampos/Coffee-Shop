@@ -1,9 +1,18 @@
-package co.grandcircus.entity;
+package co.grandcircus.coffeeshop.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Users")
 public class User {
 	
-	private int id;
-	private String firstName;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id; 
+	private String firstName;      //annotation?
 	private String lastName;
 	private String email;
 	private String phoneNumber;
@@ -19,11 +28,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

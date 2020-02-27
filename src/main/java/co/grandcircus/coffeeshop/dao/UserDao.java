@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import co.grandcircus.entity.User;
+import co.grandcircus.coffeeshop.entity.User;
 
 @Repository
 public class UserDao {
